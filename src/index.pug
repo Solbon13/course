@@ -3,5 +3,18 @@ doctype html
 html
     head
         title Example
+        link(rel="stylesheet"
+        href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css")
+        link(rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet" href="css/styles.css")
     body
         h1 Webpack 4 PUG/SASS config by #{name}
+        include components/textField/index
+        include components/dropDown/index
+        include components/maskTextField/index
+        include components/dateDropDown/index
+
+        i(class="material-icons") keyboard_arrow_down
+
+        script(src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js")

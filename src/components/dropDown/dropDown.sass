@@ -1,0 +1,18 @@
+.containerDropDown
+  @extend %StyleFrame
+.textDropDown
+  @extend %StyleText
+
+  width: 275px
+  height: 35px
+  border: none
+
+.containerDropDownSelect
+  display: none
+  background-color: #f9f9f9
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2)
+  z-index: 1
+  width: 320px
+
+.containerDropDown:hover .containerDropDownSelect 
+  display: block
