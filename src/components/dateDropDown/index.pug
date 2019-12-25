@@ -1,3 +1,5 @@
-.containerDateDropDown
-    input(class='dateDropDown', placeholder='ДД.ММ.ГГГГ')
-    include ../arrowButton/index
+mixin date-drop-down()
+    .containerDateDropDown
+        +Field(ftype='text', fclass='dateDropDown', fplaceholder!=attributes.fplaceholder)
+        include ../arrowButton/index
+        +arrow-button(fplaceholder!=attributes.arrowIcons)

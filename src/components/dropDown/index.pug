@@ -1,20 +1,10 @@
-.containerDropDown
-    input(class='textDropDown')
-    include ../arrowButton/index
+mixin dropdown(text1,arrText, arrVal, arrowIcons)
+    .containerDropDown
+        .textDropDown=text1
+        +arrow-button(fplaceholder=arrowIcons)
 
-    .containerDropDownSelect
-        .containerDropDownItems
-            .textDropDownItems Взрослые
-            .buttonDropDownItems -
-            .textDropDownItems 0
-            .buttonDropDownItems +
-        .containerDropDownItems
-            label(class='textDropDownItems') Дети
-            button(class='buttonDropDownItems') -
-            label(class='textDropDownItems') 0
-            button(class='buttonDropDownItems') +
-        .containerDropDownItems
-            label(class='textDropDownItems') Младенцы
-            button(class='buttonDropDownItems') -
-            label(class='textDropDownItems') 0
-            button(class='buttonDropDownItems') +
+        each val, index in arrText
+            .containerDropDownSelect=(index + ': ' + val)
+                button(name='btn'+index, onclick=`alert(${arrVal[index]})`) -
+                =arrVal[index]
+                button() +

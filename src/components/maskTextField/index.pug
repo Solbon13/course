@@ -1,2 +1,3 @@
 include ../mixInput/index
-+Field('date', 'maskTextField', 'ДД.ММ.ГГГГ')
+mixin field-date()
+    +Field(ftype='date', fclass='maskTextField', fplaceholder=attributes.fplaceholder)

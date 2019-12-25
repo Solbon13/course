@@ -1,2 +1,3 @@
 include ../mixInput/index
-+Field('text', 'textField', 'email')(name='d')
+mixin field-text()
+    +Field(ftype='text', fclass='textField', fplaceholder=attributes.fplaceholder)

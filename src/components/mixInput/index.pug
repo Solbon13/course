@@ -1,2 +1,5 @@
-mixin Field(ftype, fclass, fplaceholder, fpattern)
-    input(type=ftype class=fclass placeholder=fplaceholder pattern=fpattern name!=attributes.name)
+mixin Field()
+    if (attributes.freadonly)
+        input(type=attributes.ftype class=attributes.fclass placeholder=attributes.fplaceholder pattern=fpattern read!=attributes.name readonly)
+    else
+        input(type=attributes.ftype class=attributes.fclass placeholder=attributes.fplaceholder pattern=fpattern read!=attributes.name)
