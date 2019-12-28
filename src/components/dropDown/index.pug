@@ -1,10 +1,13 @@
 mixin dropdown(text1,arrText, arrVal, arrowIcons)
+    script plus = (a) => ++a
     .containerDropDown
         .textDropDown=text1
         +arrow-button(fplaceholder=arrowIcons)
-
-        each val, index in arrText
-            .containerDropDownSelect=(index + ': ' + val)
-                button(name='btn'+index, onclick=`alert(${arrVal[index]})`) -
-                =arrVal[index]
-                button() +
+        .containerDropDownSelect
+            each val, index in arrText
+                .containerDropDownItems
+                    .textContanerMain=(index + ': ' + val)
+                    button(class='btnDropDown' name='btn'+index, onclick=`plus(${arrVal[index]})`) -
+                    .textContaner=arrVal[index]
+                    button(class='btnDropDown') +
+            a(class='applyDropDown') ПРИМЕНИТЬ
